@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Collections.Immutable" Version="6.0.0" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="set server_mod_dir=E:\games\SteamLibrary\steamapps\common\Eco\Eco_Data\Server\Mods\EcoRebalanced\&#xD;&#xA;for /f &quot;tokens=*&quot; %25%25i in ($(SolutionDir)DLLCopyList.txt) DO (&#xD;&#xA;    xcopy /Y &quot;$(OutDir)%25%25i&quot; &quot;%25server_mod_dir%25&quot;&#xD;&#xA;)&#xD;&#xA;&#xD;&#xA;" />
+  </Target>
+
+  <ItemGroup>
+    <Reference Include="Eco.Core">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.EM.Framework">
+      <HintPath>Eco.EM.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Gameplay">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.Gameplay.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.ModKit">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.ModKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Mods">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.Mods.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Networking.ENet">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.Networking.ENet.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Plugins">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.Plugins.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Shared">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Simulation">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.Simulation.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.Stats">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.Stats.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.WebServer">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.WebServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.World">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.World.dll</HintPath>
+    </Reference>
+    <Reference Include="Eco.WorldGenerator">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\Eco.WorldGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="EcoServer">
+      <HintPath>C:\Users\Ryan\Downloads\ReferenceAssemblies\EcoServer.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
